@@ -7,8 +7,18 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Faculty Management System Home</title>
+
+<style>
+
+#grad {
+height : 100%;
+background-image: linear-gradient(blue, cornflowerblue);
+}
+
+</style>
 </head>
 <body>
+	<div id=grad>
 	<div align="center">
 	<h1>Faculty List</h1>
 	<br>
@@ -26,6 +36,7 @@
 			<td><b>Age</b></td>
 			<td><b>Gender</b></td>
 			<td><b>Qualification</b></td>
+			<td><b>Department</b></td>
 			<td><b>Designation</b></td>  
 			<td><b>NumberOfConferences</b></td>
 			<td><b>NumberOfPapers</b></td>
@@ -44,6 +55,7 @@
 			<td>${faculty.age }</td>
 			<td>${faculty.gender }</td>			
 			<td>${faculty.qualification }</td>
+			<td>${faculty.department }</td>
 			<td>${faculty.designation }</td>
 			<td>${faculty.numberOfConference }</td>
 			<td>${faculty.numberOfPapers }</td>
@@ -64,6 +76,6 @@
 	</table>
 	
 	</div>
-	
+	</div>
 </body>
 </html>

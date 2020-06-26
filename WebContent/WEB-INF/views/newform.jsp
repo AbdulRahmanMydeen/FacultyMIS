@@ -61,6 +61,17 @@
 					</td>
            		</tr>
            		<tr>
+                	<td align="left" valign="top" width="41%">Department<span style="color:red">*</span></td>
+                	<td width="57%"><form:select path="department">
+						<option value="Default">Default</option>
+						<option value="EEE">EEE</option>
+						<option value="EIE">EIE</option>
+						<option value="ECE">ECE</option>
+					</form:select>
+					</td>
+           		</tr>
+           		
+           		<tr>
 					<td align="left" valign="top" width="41%">Designation<span style="color:red">*</span></td>
                 	<td width="57%"><form:select path="designation">
 						<option value="Default">Default</option>

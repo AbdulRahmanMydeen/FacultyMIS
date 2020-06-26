@@ -20,7 +20,7 @@ public class FacultyDetails {
 	@NotNull @Pattern(regexp = "^(?!.*([A-Za-z])\\1{2})[A-Za-z]+$" , message = "Enter a valid name")
 	private String facultyLastName;
 	
-	private String qualification , designation;
+	private String qualification , designation , department;
 	private String gender;
 	
 	@NotNull 
@@ -49,13 +49,14 @@ public class FacultyDetails {
 	
 	
 	public FacultyDetails(String facultyFirstName, String facultyLastName,
-			String mobileNumber,  int age ,String gender, String qualification , String designation , String numberOfConference, String numberOfPapers , String mailId, String username,
+			String mobileNumber,  int age ,String gender, String qualification ,String department,  String designation , String numberOfConference, String numberOfPapers , String mailId, String username,
 			String password) {
 
 		this.mobileNumber = mobileNumber;
 		this.facultyFirstName = facultyFirstName;
 		this.facultyLastName = facultyLastName;
 		this.qualification = qualification;
+		this.department = department;	
 		this.designation = designation;
 		this.gender = gender;
 		this.age = age;
@@ -68,9 +69,9 @@ public class FacultyDetails {
 
 	
 	public FacultyDetails(Integer facultyId, String facultyFirstName, String facultyLastName,
-			String mobileNumber,  int age ,String gender, String qualification , String designation , String numberOfConference, String numberOfPapers , String mailId, String username,
+			String mobileNumber,  int age ,String gender, String qualification , String department , String designation , String numberOfConference, String numberOfPapers , String mailId, String username,
 			String password) {
-		this(facultyFirstName ,facultyLastName , mobileNumber , age , gender , qualification , designation , numberOfConference , numberOfPapers , mailId , username , password );
+		this(facultyFirstName ,facultyLastName , mobileNumber , age , gender , qualification , department ,  designation , numberOfConference , numberOfPapers , mailId , username , password );
 		this.facultyId = facultyId;
 		}
 
@@ -122,6 +123,16 @@ public class FacultyDetails {
 	public void setQualification(String qualification) {
 		this.qualification = qualification;
 	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
 
 	public String getDesignation() {
 		return designation;

@@ -10,7 +10,7 @@
 </head>
 <body>
 <div align="center">
-	<form method="get" action = "searchfaculty">
+	<form method="post" action = "searchfaculty">
   <input type="text" name="searchbar"/>
    <button>find</button>
    </form><br>
