@@ -14,7 +14,4 @@ public interface FacultyDatabaseOb {
 	public List<FacultyDetails> list();
 	public List<FacultyDetails> list(String searchText);
 	
-	
-	
-
 }

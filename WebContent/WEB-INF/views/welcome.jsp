@@ -5,23 +5,26 @@
 <head>
 <style>
 
+
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
-  
 }
 th, td {
   padding: 5px;
   text-align: left;
 }
-
+table.center{
+    margin: 0 auto;
+    margin-top: 13%;
+	}
 </style>
 
 <meta charset="ISO-8859-1">
 <title>User Panel</title>
 </head>
 <body>
- <table style = "width:30%">
+ <table class = "center" style = "width:30%">
             <tr>
             	<th>First Name:</th>
                 <td>${firstname}</td>

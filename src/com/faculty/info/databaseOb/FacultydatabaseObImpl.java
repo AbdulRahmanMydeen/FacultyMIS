@@ -112,32 +112,34 @@ public class FacultydatabaseObImpl implements FacultyDatabaseOb {
 
 	
 	public List<FacultyDetails> list(String textSearch) {
-		String query = "SELECT * FROM FACULTYDETAILS WHERE " +"FirstName LIKE '" + textSearch + "%' OR lastName LIKE '" + textSearch + "%' OR Designation LIKE '"+ textSearch +"%' OR Qualification LIKE '"+ textSearch +"%' ; ";
-		List<FacultyDetails> users = jdbcTemplate.query(query, new UserMapper());
-		
-		
-		class UserMapper implements RowMapper<FacultyDetails> {
-			  public FacultyDetails mapRow(ResultSet rs, int arg1) throws SQLException {
-				  FacultyDetails user = new FacultyDetails();  
-			    user.setUsername(rs.getString("username"));
-			    user.setPassword(rs.getString("password"));
-			    user.setFacultyFirstName(rs.getString("firstname"));
-			    user.setFacultyLastName(rs.getString("lastname"));
-			    user.setMailId(rs.getString("EmailId"));
-			    user.setMobileNumber(rs.getString("MobileNumber"));
-			    user.setDesignation(rs.getString("Designation"));
-			    user.setDepartment(rs.getString("Department"));
-			    user.setQualification( rs.getString("Qualification"));
-			    user.setGender(rs.getString("Gender"));
-			    user.setNumberOfConference(rs.getString("NumberOfConferences"));
-			    user.setAge(rs.getInt("AGE"));
-			    user.setNumberOfPapers(rs.getString("NumberOfPapers"));
-			    return user;
-			  }			
+		String query = "SELECT * FROM FACULTYDETAILS WHERE " +"FirstName LIKE '" + textSearch + "'	";
+		RowMapper<FacultyDetails> rowMapper = new RowMapper<FacultyDetails>() {
+
+			@Override
+			public FacultyDetails mapRow(ResultSet rs, int rowNum) throws SQLException {
+				int id =rs.getInt("IdNumber");
+				String mobileNumber =rs.getString("MobileNumber");
+				String firstName = rs.getString("FirstName");
+				String lastName = rs.getString("lastName");
+				String qualification = rs.getString("Qualification");
+				String designation = rs.getString("Designation");
+				String department = rs.getString("Department");
+				String mailID = rs.getString("EmailId");
+				String username = rs.getString("Username");
+				String password = rs.getString("Password");
+				String gender = rs.getString("Gender");
+				String conferences =rs.getString("NumberOfConferences");
+				String papers =rs.getString("NumberOfPapers");
+				int age = rs.getInt("AGE");
+				
+				
+				return new FacultyDetails(id , firstName , lastName , mobileNumber , age , gender ,qualification ,department, designation , conferences , papers , mailID , username , password );
+				
+			}
+			
 		};
 		
-		return users;
-		
+		return jdbcTemplate.query(query , rowMapper);
 	}
 
 	@Override

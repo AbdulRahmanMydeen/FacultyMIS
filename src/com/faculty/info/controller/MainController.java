@@ -1,7 +1,5 @@
 package com.faculty.info.controller;
 
-
-import java.sql.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -61,19 +59,14 @@ public class MainController {
 			
 	}
 	
-	                                                
-	
 	@RequestMapping(value = "/listfaculties")
 	public ModelAndView listFaculties(ModelAndView model) {
-		Date date = new Date(0);
-		
 		List<FacultyDetails> listFaculties = facultyDAO.list();
 		model.addObject("listFaculties", listFaculties);
 		model.setViewName("adminhome");
 		return model;
 	}
 	 
-	
 	@RequestMapping(value = "/newfaculty", method = RequestMethod.GET)
 	public ModelAndView newFaculty(ModelAndView model) {
 		
@@ -83,10 +76,11 @@ public class MainController {
 		return model;
 	}
 
-	
-	@RequestMapping(value = "/searchfaculty" , method = RequestMethod.POST)
-	public ModelAndView searchFaculty(ModelAndView model , @RequestParam("searchbar") String searchBar ) {
+	@RequestMapping(value = "/searchfaculty", method = RequestMethod.GET)
+	public ModelAndView searchFaculty(ModelAndView model , HttpServletRequest request ) {
+		String searchBar = request.getParameter("searchbar");
 		List<FacultyDetails> listFaculties = facultyDAO.list(searchBar);
+		
 		model.addObject("faculty",  listFaculties);
 		model.setViewName("searchpage");
 		return model;

@@ -2,10 +2,10 @@ package com.faculty.info.model;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;  
+
+import org.hibernate.validator.constraints.NotEmpty;  
 
 public class FacultyDetails {
 	
@@ -21,8 +21,8 @@ public class FacultyDetails {
 	private String facultyLastName;
 	
 	private String qualification , designation , department;
-	private String gender;
-	
+	private String gender , searchBar;
+
 	@NotNull 
 	@Min(value = 25 , message = "must be equal or greater than 25")    
 	@Max(value = 60 , message = "must not be greater than 60")
@@ -198,6 +198,12 @@ public class FacultyDetails {
 		this.numberOfPapers = numberOfPapers;
 	}
 	 
-	
+	public String getSearchBar() {
+		return searchBar;
+	}
+
+	public void setSearchBar(String searchBar) {
+		this.searchBar = searchBar;
+	}
 	
 }

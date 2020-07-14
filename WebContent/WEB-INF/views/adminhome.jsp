@@ -9,10 +9,11 @@
 <title>Faculty Management System Home</title>
 
 <style>
-
+a{
+font-family: Comic Sans MS;
+}
 #grad {
 height : 100%;
-background-image: linear-gradient(blue, cornflowerblue);
 }
 
 </style>
@@ -21,13 +22,8 @@ background-image: linear-gradient(blue, cornflowerblue);
 	<div id=grad>
 	<div align="center">
 	<h1>Faculty List</h1>
-	<br>
-	<form action="searchfaculty">
-	 	<input type="text" name="searchbar"/>
-   		<button>find</button>
-	</form>
-	</br>
 	<table border = "11" cellpadding="5">
+		<thead>
 		<tr>
 			<td><b>idNumber</b></td>
 			<td><b>FirstName</b></td>
@@ -46,6 +42,7 @@ background-image: linear-gradient(blue, cornflowerblue);
 			<td><b>Action</b></td>
 			
 		</tr>
+		</thead>
 		<c:forEach items="${listFaculties}" var="faculty" varStatus="status">
 		<tr>
 			<td>${faculty.facultyId }</td>
@@ -74,7 +71,9 @@ background-image: linear-gradient(blue, cornflowerblue);
 		</c:forEach>
 	
 	</table>
-	
+	<br>
+	<a href = "adminpanel"> Back to homepage </a>
+	</br>
 	</div>
 	</div>
 </body>

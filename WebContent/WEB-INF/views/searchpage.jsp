@@ -10,7 +10,7 @@
 </head>
 <body>
 <div align="center">
-	<form method="post" action = "searchfaculty">
+	<form method = "get" action = "searchfaculty">
   <input type="text" name="searchbar"/>
    <button>find</button>
    </form><br>
@@ -31,7 +31,7 @@
 			<td><b>Password</b></td>
 			
 		</tr>
-		<c:forEach items="${listFaculties}" var="faculty" varStatus="status">
+		<c:forEach items="${listFaculties}" var="faculty">
 		<tr>
 			<td>${faculty.facultyId }</td>
 			<td>${faculty.facultyFirstName }</td>

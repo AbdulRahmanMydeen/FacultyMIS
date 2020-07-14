@@ -7,9 +7,11 @@ import javax.servlet.ServletRegistration.Dynamic;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
-import org.springframework.web.servlet.DispatcherServlet;	
+import org.springframework.web.servlet.DispatcherServlet;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;	
 
-public class WebApplicationInit implements WebApplicationInitializer {
+public class WebApplicationInit implements WebApplicationInitializer  , WebMvcConfigurer{
 	
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
@@ -24,5 +26,4 @@ public class WebApplicationInit implements WebApplicationInitializer {
 	
 		
 	}
-
 }

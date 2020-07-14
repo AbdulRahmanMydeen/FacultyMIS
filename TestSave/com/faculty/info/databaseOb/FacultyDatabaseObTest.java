@@ -2,13 +2,11 @@
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.jdbc.core.RowMapper;
+
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import com.faculty.info.model.FacultyDetails;
@@ -32,10 +30,10 @@ class FacultyDatabaseObTest {
 	@Test
 	void testSave() {
 	
-//	FacultyDetails faculty = new FacultyDetails(299, "8220437403", "Rahman", "Mydeen", "M.E", "AP-2", "M", 34, "abdul@mail,com", "superman", "password123", "2","2");
-//	int result = dbo.save(faculty);
+	FacultyDetails faculty = new FacultyDetails(102,"JAckie","CHan","9943783344",30,"Male","M.E","EIE","AP-1","2","0","chan.jackie@attention.in","Chan993","password231");
+	int result = dbo.save(faculty);
 	
-	//assertTrue(result > 0);
+    assertTrue(result > 0);
 	}
 
 	@Test

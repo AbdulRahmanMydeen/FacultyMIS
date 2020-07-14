@@ -45,12 +45,12 @@ body{
 	}
 	
 #adminlogo{
-	background: white;
 	padding: 5px;
 	width: 100px;
 	opacity: 0.6;
 	margin: 20 20 0 0;
 	border-radius: 50px;
+	background-image : url(https://www.google.com/search?q=admin+icon&sxsrf=ALeKk03RDIhuuXOaUfGFWiAg_SIwGWdqbg:1594738497277&tbm=isch&source=iu&ictx=1&fir=spkcrRNpO96HgM%252C2zsydRCMj3t3uM%252C_&vet=1&usg=AI4_-kTKErWebBCncsC3OgmA6t5KplavdA&sa=X&ved=2ahUKEwjH847t_8zqAhWhoekKHVzDCWgQ9QEwAXoECAsQMg#imgrc=spkcrRNpO96HgM)
 	}
 	
 ul li{
@@ -70,7 +70,7 @@ ul li:hover{
 <body>
 	<div id='header'>
 <center>
-<h2 align = center>Faculty Management System</h2> 
+<h2>Faculty Management System</h2> 
 </center>
 </div>
 
@@ -78,7 +78,7 @@ ul li:hover{
 <ul>
 	<li> <a href="newfaculty">Add Faculty</a></li>
 	<li> <a href="listfaculties">Manage Faculty Details</a></li>
-	<li> <a href="searchfaculty">Search Faculty</a></li>
+	<!-- <li> <a href="searchfaculty">Search Faculty</a></li> -->
 	<li> <a href="/FacultyManagement">Logout</a></li>
 </ul>
 </div>
